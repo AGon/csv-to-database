@@ -12,22 +12,22 @@
   - ```--skip-header=``` : пропустить первую строку (по умолчанию: ```false```).
 
 - Настройки подключения к БД
-  - ```--driver-name=``` : название JDBC-драйвера;
-  - ```--database-url=``` : URL для подключения к базе данных;
-  - ```--username=``` : имя пользователя;
-  - ```--password=``` : пароль.
+  - ```--db.driver=``` : название класса JDBC-драйвера;
+  - ```--db.url=``` : URL для подключения к базе данных;
+  - ```--db.username=``` : имя пользователя;
+  - ```--db.password=``` : пароль.
   
 ##### Пример запуска:
   
   ```
-  java -cp csv-to-database-0.1.jar -Dloader.path=./lib/* \
+  java -cp csv-to-database-0.1.1.jar -Dloader.path=./lib/* \
     org.springframework.boot.loader.PropertiesLauncher \
         --path-to-csv="data-20171211T1403-structure-20171211T1403.csv" \
         --skip-header="true" \
-        --driver-name="org.h2.Driver" \
-        --database-url="jdbc:h2:~/test" \
-        --username="sa"
+        --db.driver="org.h2.Driver" \
+        --db.url="jdbc:h2:~/test" \
+        --db.username="sa"
   ```
   
 ##### Примечание
-В каталог ```lib``` необходимо скопировать JDBC-драйвер для соответствующей БД.
+Перед запуском, в каталог ```lib``` необходимо скопировать JDBC-драйвер для соответствующей БД.
